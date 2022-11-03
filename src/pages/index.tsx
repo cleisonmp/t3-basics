@@ -33,17 +33,25 @@ const Home: NextPage = () => {
         </h1>
         {session ? (
           <>
-            <p>hi {session.user?.name}</p>
+            <p>Current user: {session.user?.name}</p>
 
-            <button onClick={handleLogout}>Logout</button>
+            <button onClick={handleLogout} className="rounded bg-red-300 p-2">
+              Logout
+            </button>
             <div className="pt-6">
               <Form />
             </div>
           </>
         ) : (
-          <button onClick={handleDiscordSignIn}>Login with Discord</button>
+          <button
+            onClick={handleDiscordSignIn}
+            className="rounded bg-blue-500 p-2"
+          >
+            Login with Discord
+          </button>
         )}
         <div className="pt-10">
+          <p className="mb-2">Message board</p>
           <Messages />
         </div>
       </main>

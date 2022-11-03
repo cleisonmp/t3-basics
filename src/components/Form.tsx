@@ -3,7 +3,7 @@ import { useState } from "react";
 import { trpc } from "../utils/trpc";
 
 export const Form = () => {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   const [message, setMessage] = useState("");
   const utils = trpc.useContext();
   const postMessage = trpc.guestbook.postMessage.useMutation({

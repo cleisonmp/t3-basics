@@ -3,6 +3,7 @@ import Head from "next/head";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { Messages } from "../components/Messages";
 import { Form } from "../components/Form";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   const { data: session, status } = useSession();
@@ -31,6 +32,11 @@ const Home: NextPage = () => {
         <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
           Create <span className="text-purple-300">T3</span> App
         </h1>
+        <nav>
+          <Link href="image" className="underline">
+            Image Upload
+          </Link>
+        </nav>
         {session ? (
           <>
             <p>Current user: {session.user?.name}</p>

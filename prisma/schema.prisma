@@ -73,3 +73,9 @@ model Guestbook {
   name      String
   message   String   @db.VarChar(100)
 }
+
+model Imagebank {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  fileKey   String   @db.Text
+}

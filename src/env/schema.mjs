@@ -14,10 +14,16 @@ export const serverSchema = z.object({
     // Since NextAuth automatically uses the VERCEL_URL if present.
     (str) => process.env.VERCEL_URL ?? str,
     // VERCEL_URL doesnt include `https` so it cant be validated as a URL
-    process.env.VERCEL ? z.string() : z.string().url(),
+    process.env.VERCEL ? z.string() : z.string().url()
   ),
+  //AUTH KEYS
   DISCORD_CLIENT_ID: z.string(),
   DISCORD_CLIENT_SECRET: z.string(),
+  //AWS KEYS
+  MY_AWS_ACCESS_KEY: z.string(),
+  MY_AWS_SECRET_KEY: z.string(),
+  MY_AWS_BUCKET_NAME: z.string(),
+  MY_AWS_REGION: z.string(),
 });
 
 /**

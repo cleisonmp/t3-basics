@@ -13,5 +13,8 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  images: {
+    domains: ["images.unsplash.com", "t3-demo-app.s3.sa-east-1.amazonaws.com"],
+  },
 };
 export default config;

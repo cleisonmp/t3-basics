@@ -1,3 +1,12 @@
+# T3 examples
+
+This project is used to test some features using the T3Stack
+
+- Current features:
+  - Access control
+  - Message board
+  - Aws image upload
+
 # Create T3 App
 
 This is an app bootstrapped according to the [init.tips](https://init.tips) stack, also known as the T3-Stack.

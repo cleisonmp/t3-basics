@@ -101,13 +101,7 @@ const ImageUpload: NextPage = () => {
           <p>Image List</p>
           {imagesList?.map((image) => (
             <div key={image.fileKey}>
-              <span>fileLink:{image.fileKey}</span>
-              <Image
-                src={`https://t3-demo-app.s3.sa-east-1.amazonaws.com/${image.fileKey}`}
-                alt=""
-                width={200}
-                height={200}
-              />
+              <Image src={`${image.fileKey}`} alt="" width={200} height={200} />
             </div>
           ))}
         </div>

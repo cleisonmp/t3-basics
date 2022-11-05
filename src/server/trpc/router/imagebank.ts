@@ -1,14 +1,21 @@
 import { z } from "zod";
+import { getSignedUrl } from "../../../lib/getSignedUrl";
 import { router, protectedProcedure, publicProcedure } from "../trpc";
 
 export const imagebankRouter = router({
   getAll: publicProcedure.query(async ({ ctx }) => {
     try {
-      return await ctx.prisma.imagebank.findMany({
+      const imageList = await ctx.prisma.imagebank.findMany({
         orderBy: {
           createdAt: "desc",
         },
       });
+
+      imageList.forEach(async (image) => {
+        image.fileKey = await getSignedUrl(image.fileKey);
+      });
+
+      return imageList;
     } catch (error) {
       console.log("error", error);
     }

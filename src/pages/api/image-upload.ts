@@ -12,6 +12,7 @@ const imageUpload = async (req: NextApiRequest, res: NextApiResponse) => {
     signatureVersion: "v4",
   });
 
+  //TODO:  check and format the mime types correctly some files might break with this simples split
   const fileExtension = (req.query.fileType as string).split("/")[1];
   const fileKey = `${randomUUID()}.${fileExtension}`;
 

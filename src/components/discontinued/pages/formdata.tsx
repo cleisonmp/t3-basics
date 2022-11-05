@@ -1,13 +1,13 @@
-import { useState } from "react";
+/*import { useState } from "react";
 import axios from "axios";
-import type { GetServerSideProps } from "next";
 import { type NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
-import type { ChangeEvent } from "react";
-
+import type { ChangeEvent } from "react";*/
+import { type NextPage } from "next";
 const FormUpload: NextPage = () => {
-  const [imageFile, setImageFile] = useState<File>();
+  //upload image using form data
+  //Component discontinued keeping the code as example
+  /*const [imageFile, setImageFile] = useState<File>();
   const [createObjectURL, setCreateObjectURL] = useState("");
 
   const uploadToClient = (event: ChangeEvent<HTMLInputElement>) => {
@@ -51,6 +51,7 @@ const FormUpload: NextPage = () => {
         </form>
       </div>
     </div>
-  );
+  );*/
+  return <p>Component discontinued</p>;
 };
 export default FormUpload;

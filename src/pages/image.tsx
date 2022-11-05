@@ -54,6 +54,18 @@ const ImageUpload: NextPage = () => {
     },
   });
 
+  /* render selected image
+  const [imageFile, setImageFile] = useState<File>();
+  const [createObjectURL, setCreateObjectURL] = useState("");
+  const uploadToClient = (event: ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files[0]) {
+      const image = event.target.files[0];
+
+      setImageFile(image);
+      setCreateObjectURL(URL.createObjectURL(image));
+    }
+  };*/
+
   if (isLoading) return <div>Fetching images...</div>;
 
   async function handleSubmit(e: ChangeEvent<HTMLFormElement>) {
@@ -103,9 +115,7 @@ const ImageUpload: NextPage = () => {
     </>
   );
 };
-/*
-  https://t3-demo-app.s3.sa-east-1.amazonaws.com/21b36ff7-70e4-4adc-a5c9-c79945cb4972.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAY4LFL6HKJO4FUEEO%2F20221104%2Fsa-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221104T031647Z&X-Amz-Expires=604800&X-Amz-Signature=38cc7fb514174778542b16c527bc7185271e0f17384665c1ae909832dd48121d&X-Amz-SignedHeaders=host
-*/
+
 export default ImageUpload;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {

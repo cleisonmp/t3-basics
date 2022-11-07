@@ -24,6 +24,8 @@ export const serverSchema = z.object({
   MY_AWS_SECRET_KEY: z.string(),
   MY_AWS_BUCKET_NAME: z.string(),
   MY_AWS_REGION: z.string(),
+  //CRON
+  CRON_SECRET_KEY: z.string(),
 });
 
 /**

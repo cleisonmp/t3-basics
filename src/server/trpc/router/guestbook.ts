@@ -36,4 +36,23 @@ export const guestbookRouter = router({
         console.log(error);
       }
     }),
+  cronMessage: publicProcedure
+    .input(
+      z.object({
+        name: z.string(),
+        message: z.string(),
+      })
+    )
+    .mutation(async ({ ctx, input }) => {
+      try {
+        await ctx.prisma.guestbook.create({
+          data: {
+            name: input.name,
+            message: input.message,
+          },
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    }),
 });

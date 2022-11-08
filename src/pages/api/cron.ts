@@ -3,6 +3,8 @@ import { appRouter } from "../../server/trpc/router/_app";
 import { prisma } from "../../server/db/client";
 import { env } from "../../env/server.mjs";
 
+//https://vercel.com/guides/how-to-setup-cron-jobs-on-vercel
+//https://www.serverlessq.com/#pricing
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
